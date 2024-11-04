@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.backgroundButton};
+export const ButtonToggle = styled.button`
+  background-color: none;
   color: ${({ theme }) => theme.colors.text};
-  border: none;
+  border: 1px solid ${({ theme }) => theme.colors.borderColor}; 
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.backgroundButtonTab}; 
+    border: 2px solid ${({ theme }) => theme.colors.borderColor};
   }
 
   &:focus {
