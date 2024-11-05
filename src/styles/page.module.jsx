@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { darkTheme, lightTheme, GlobalStyle } from './globals.style'; 
-import ThemeToggle from './ThemeToggle';
+import GlobalStyle from './globals.style'; 
+import ToggleTheme from './ToggleTheme.style';
 
 function App({ Component, pageProps }) {
   const [isDarkTheme, setIsDarkTheme] = React.useState(() => {
@@ -22,7 +24,7 @@ function App({ Component, pageProps }) {
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Component {...pageProps} />
-      <ThemeToggle toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+      <ToggleTheme toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
     </ThemeProvider>
   );
 }

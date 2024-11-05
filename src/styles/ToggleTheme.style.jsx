@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonToggle = styled.button`
+const ToggleTheme = styled.button`
   background-color: none;
   color: ${({ theme }) => theme.colors.text};
   border: 1px solid ${({ theme }) => theme.colors.borderColor}; 
@@ -18,3 +18,5 @@ export const ButtonToggle = styled.button`
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.borderColor}; 
   }
 `;
+
+export default ToggleTheme;

@@ -22,7 +22,7 @@ declare module 'styled-components' {
   }
 }
 
-const darkTheme: DefaultTheme = {
+export const darkTheme: DefaultTheme = {
   colors: {
     backgroundColor: '#101419',
     backgroundBoxList: '#141A1F',
@@ -42,7 +42,7 @@ const darkTheme: DefaultTheme = {
   },
 };
 
-const lightTheme: DefaultTheme = {
+export const lightTheme: DefaultTheme = {
   colors: {
     backgroundColor: '#FFFFFF',
     backgroundBoxList: '#FCFCFC',

@@ -1,8 +1,8 @@
-import { DefaultTheme, createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html {
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: 62.5%; 
   }
   
   body {
