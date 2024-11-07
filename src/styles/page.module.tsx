@@ -1,13 +1,14 @@
-'use client'
+"use client";
 
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from './globals.style'; 
-import ToggleTheme from './ToggleTheme.style';
+import GlobalStyle from '../styles/globals.style'; 
+import ToggleTheme from '../styles/ToggleTheme.style';
+import { AppProps } from 'next/app';
+import { lightTheme, darkTheme } from '@/styles/Theme';
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   const [isDarkTheme, setIsDarkTheme] = React.useState(() => {
-    
     const savedTheme = localStorage.getItem('theme');
     return savedTheme ? savedTheme === 'dark' : true; 
   });
@@ -23,8 +24,10 @@ function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <Component {...pageProps} />
-      <ToggleTheme toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+      <ToggleTheme onClick={toggleTheme}>
+        {isDarkTheme ? "Tema Escuro" : "Tema Claro"}
+      </ToggleTheme>
+      
     </ThemeProvider>
   );
 }
